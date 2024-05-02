@@ -6,17 +6,17 @@
 #    By: joseoliv <joseoliv@student.42porto.com>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/04/30 22:18:11 by joseoliv          #+#    #+#              #
-#    Updated: 2024/05/02 21:05:09 by joseoliv         ###   ########.fr        #
+#    Updated: 2024/05/02 23:46:24 by joseoliv         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = libftprintf.a
 
-SRCS = ft_printf.c some_put_nbr.c some_funcs.c
+SRCS = ft_printf.c nbr_funcs.c libft_funcs.c write_funcs.c
 
 OBJS = $(SRCS:.c=.o)
 
-CC = cc -g
+CC = cc
 
 CFLAGS = -Wall -Wextra -Werror
 
@@ -33,10 +33,9 @@ clean:
 
 fclean: clean
 	rm -rf $(NAME)
-	rm -rf main.o
+	rm -rf main
 
 run: $(SRCS)
-	@$(CC) $(CFLAGS) -o ./main main.c $(SRCS)
+	@$(CC) $(CFLAGS) -o main main.c $(SRCS)
 	@./main
-
 re: fclean all

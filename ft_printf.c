@@ -6,7 +6,7 @@
 /*   By: joseoliv <joseoliv@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/30 22:17:03 by joseoliv          #+#    #+#             */
-/*   Updated: 2024/05/02 21:19:23 by joseoliv         ###   ########.fr       */
+/*   Updated: 2024/05/02 23:26:14 by joseoliv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,13 +17,14 @@ int	ft_printf(char const *str, ...)
 	va_list	args;
 	int		i;
 	int		len;
+
 	i = 0;
 	len = 0;
 	va_start(args, str);
 	while (str[i])
 	{
 		if (str[i] == '%')
-			len = call_funcs(args, str[++i]);
+			len += call_funcs(args, str[++i]);
 		else
 		{
 			ft_putchar(str[i]);
@@ -51,10 +52,7 @@ int	call_funcs(va_list args, const char c)
 	else if (c == 'u')
 		len += ft_putnbr(va_arg(args, unsigned int));
 	else if (c == 'p')
-	{
-		len += ft_putstr("0x");
-		len += ft_putnbr_hexa_long(va_arg(args, unsigned long));
-	}
+		len += ft_putptr_hexa(va_arg(args, unsigned long));
 	else if (c == 'x' || c == 'X')
 		len += ft_putnbr_hexa(va_arg(args, unsigned int), c);
 	return (len);

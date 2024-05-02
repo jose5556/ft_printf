@@ -2,6 +2,6 @@
 
 int	main(void)
 {
-ft_printf("%d\n", ft_printf("%p\n", "ola"));
-   printf("%d\n",    printf("%p\n", "ola"));
+	   printf("%d\n",    printf("a\n%x\n%p\n%%\na\n", 960, "ola"));
+	ft_printf("%d\n", ft_printf("a\n%x\n%p\n%%\na\n", 960, "ola"));
 }
