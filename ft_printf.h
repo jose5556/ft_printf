@@ -6,7 +6,7 @@
 /*   By: joseoliv <joseoliv@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/30 22:16:23 by joseoliv          #+#    #+#             */
-/*   Updated: 2024/05/02 21:20:46 by joseoliv         ###   ########.fr       */
+/*   Updated: 2024/05/02 21:37:13 by joseoliv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,6 @@ size_t	ft_strlen(const char *s);
 int		ft_toupper(int c);
 int		ft_putstr(char *s);
 int		call_funcs(va_list args, char c);
-int		count(int n, int base);
+int		count(long n, int base);
 
 #endif

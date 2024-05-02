@@ -6,7 +6,7 @@
 /*   By: joseoliv <joseoliv@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/30 22:14:42 by joseoliv          #+#    #+#             */
-/*   Updated: 2024/05/02 21:21:34 by joseoliv         ###   ########.fr       */
+/*   Updated: 2024/05/02 21:36:50 by joseoliv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,11 +37,16 @@ int	ft_putnbr_hexa(unsigned int n, char upper)
 	return (len);
 }
 
-int	count(int n, int base)
+int	count(long n, int base)
 {
 	int	i;
 
 	i = 1;
+	if (n < 0)
+	{
+		n *= -1;
+		i++;
+	}
 	while (n > base)
 	{
 		n /= base;
@@ -49,6 +54,8 @@ int	count(int n, int base)
 	}
 	return (i);
 }
+
+
 
 int	ft_putnbr_hexa_long(unsigned long n)
 {
