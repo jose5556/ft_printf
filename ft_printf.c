@@ -6,7 +6,7 @@
 /*   By: joseoliv <joseoliv@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/30 22:17:03 by joseoliv          #+#    #+#             */
-/*   Updated: 2024/05/02 19:28:48 by joseoliv         ###   ########.fr       */
+/*   Updated: 2024/05/02 21:19:23 by joseoliv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ int	ft_printf(char const *str, ...)
 			len = call_funcs(args, str[++i]);
 		else
 		{
-			ft_putchar_fd(str[i]);
+			ft_putchar(str[i]);
 			len++;
 		}
 		i++;
@@ -41,27 +41,21 @@ int	call_funcs(va_list args, const char c)
 
 	len = 0;
 	if (c == 'c')
-	{
-		ft_putchar_fd(va_arg(args, int));
-		len++;
-	}
+		len += ft_putchar(va_arg(args, int));
 	else if (c == '%')
-	{
-		ft_putchar_fd('%');
-		len++;
-	}
+		len += ft_putchar('%');
 	else if (c == 's')
-		len = ft_putstr_fd(va_arg(args, char *), len);
+		len += ft_putstr(va_arg(args, char *));
 	else if (c == 'i' || c == 'd')
-		len = ft_putnbr_fd(va_arg(args, int), len);
+		len += ft_putnbr(va_arg(args, int));
 	else if (c == 'u')
-		len = ft_putnbr_unsigned_fd(va_arg(args, unsigned int), len);
+		len += ft_putnbr(va_arg(args, unsigned int));
 	else if (c == 'p')
 	{
-		len = ft_putstr_fd("0x", len);
-		len = ft_putnbr_hexa_unsigned_fd(va_arg(args, unsigned long), len);
+		len += ft_putstr("0x");
+		len += ft_putnbr_hexa_long(va_arg(args, unsigned long));
 	}
 	else if (c == 'x' || c == 'X')
-		len = ft_putnbr_hexa_fd(va_arg(args, unsigned int), c, len);
+		len += ft_putnbr_hexa(va_arg(args, unsigned int), c);
 	return (len);
 }
