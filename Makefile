@@ -6,7 +6,7 @@
 #    By: joseoliv <joseoliv@student.42porto.com>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/04/30 22:18:11 by joseoliv          #+#    #+#              #
-#    Updated: 2024/04/30 22:19:28 by joseoliv         ###   ########.fr        #
+#    Updated: 2024/05/02 19:16:55 by joseoliv         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -34,5 +34,8 @@ clean:
 fclean: clean
 	rm -rf $(NAME)
 	rm -rf main.o
+run: $(NAME)
+	@$(CC) $(CFLAGS) -o main main.c $(NAME)
+	@./main
 
 re: fclean all

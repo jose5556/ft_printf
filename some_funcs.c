@@ -6,27 +6,29 @@
 /*   By: joseoliv <joseoliv@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/30 22:15:04 by joseoliv          #+#    #+#             */
-/*   Updated: 2024/04/30 22:27:18 by joseoliv         ###   ########.fr       */
+/*   Updated: 2024/05/02 19:29:00 by joseoliv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-void	ft_putchar_fd(char c, int fd)
+void	ft_putchar_fd(char c)
 {
-	write(fd, &c, 1);
+	write(1, &c, 1);
 }
 
-void	ft_putstr_fd(char *s, int fd)
+int	ft_putstr_fd(char *s, int len)
 {
 	int	i;
 
 	i = 0;
 	while (s[i])
 	{
-		write(fd, &s[i], 1);
+		write(1, &s[i], 1);
 		i++;
+		len++;
 	}
+	return (len);
 }
 
 int	ft_toupper(int c)
