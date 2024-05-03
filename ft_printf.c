@@ -6,7 +6,7 @@
 /*   By: joseoliv <joseoliv@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/30 22:17:03 by joseoliv          #+#    #+#             */
-/*   Updated: 2024/05/02 23:26:14 by joseoliv         ###   ########.fr       */
+/*   Updated: 2024/05/03 19:14:11 by joseoliv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,7 +50,7 @@ int	call_funcs(va_list args, const char c)
 	else if (c == 'i' || c == 'd')
 		len += ft_putnbr(va_arg(args, int));
 	else if (c == 'u')
-		len += ft_putnbr(va_arg(args, unsigned int));
+		len += ft_unsigned_putnbr(va_arg(args, unsigned int));
 	else if (c == 'p')
 		len += ft_putptr_hexa(va_arg(args, unsigned long));
 	else if (c == 'x' || c == 'X')

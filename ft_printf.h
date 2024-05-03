@@ -6,7 +6,7 @@
 /*   By: joseoliv <joseoliv@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/30 22:16:23 by joseoliv          #+#    #+#             */
-/*   Updated: 2024/05/03 16:30:27 by joseoliv         ###   ########.fr       */
+/*   Updated: 2024/05/03 19:15:04 by joseoliv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,5 +29,6 @@ int		ft_putstr(char *s);
 int		call_funcs(va_list args, char c);
 int		count(long n, int base);
 int		ft_putptr_hexa(unsigned long n);
+int		ft_unsigned_putnbr(unsigned int n);
 
 #endif

@@ -6,7 +6,7 @@
 /*   By: joseoliv <joseoliv@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/30 22:14:42 by joseoliv          #+#    #+#             */
-/*   Updated: 2024/05/02 23:34:40 by joseoliv         ###   ########.fr       */
+/*   Updated: 2024/05/03 19:14:38 by joseoliv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,11 +37,6 @@ int	ft_putnbr(int n)
 {
 	int	len;
 
-	if (!n)
-	{
-		len = ft_putstr("(null)");
-		return (len);
-	}
 	if (n == -2147483648)
 	{
 		len = ft_putstr("-2147483648");
@@ -55,6 +50,17 @@ int	ft_putnbr(int n)
 	}
 	if (n > 9)
 		ft_putnbr(n / 10);
+	ft_putchar(n % 10 + 48);
+	return (len);
+}
+
+int	ft_unsigned_putnbr(unsigned int n)
+{
+	int	len;
+
+	len = count(n, 10);
+	if (n > 9)
+		ft_unsigned_putnbr(n / 10);
 	ft_putchar(n % 10 + 48);
 	return (len);
 }

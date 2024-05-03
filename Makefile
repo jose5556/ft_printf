@@ -6,7 +6,7 @@
 #    By: joseoliv <joseoliv@student.42porto.com>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/04/30 22:18:11 by joseoliv          #+#    #+#              #
-#    Updated: 2024/05/03 16:30:41 by joseoliv         ###   ########.fr        #
+#    Updated: 2024/05/03 19:26:29 by joseoliv         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,7 +16,7 @@ SRCS = ft_printf.c nbr_funcs.c libft_funcs.c write_funcs.c
 
 OBJS = $(SRCS:.c=.o)
 
-CC = cc
+CC = gcc
 
 CFLAGS = -Wall -Wextra -Werror
 
@@ -34,5 +34,9 @@ clean:
 fclean: clean
 	rm -rf $(NAME)
 	rm -rf main
+
+run: $(SRCS)
+	@$(CC) $(CFLAGS) -o mainn mainn.c $(SRCS)
+	@./mainn
 
 re: fclean all
