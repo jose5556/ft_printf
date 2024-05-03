@@ -6,7 +6,7 @@
 /*   By: joseoliv <joseoliv@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/30 22:16:23 by joseoliv          #+#    #+#             */
-/*   Updated: 2024/05/02 23:25:55 by joseoliv         ###   ########.fr       */
+/*   Updated: 2024/05/03 16:30:27 by joseoliv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,6 @@
 # define FT_PRINTF_H
 
 # include <stdarg.h>
-# include <stdio.h>
 # include <unistd.h>
 # include <stdlib.h>
 
