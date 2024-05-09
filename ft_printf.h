@@ -6,7 +6,7 @@
 /*   By: joseoliv <joseoliv@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/30 22:16:23 by joseoliv          #+#    #+#             */
-/*   Updated: 2024/05/03 19:15:04 by joseoliv         ###   ########.fr       */
+/*   Updated: 2024/05/09 18:41:02 by joseoliv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@
 # include <stdlib.h>
 
 int		ft_printf(char const *str, ...);
-int		ft_putnbr_hexa(unsigned long n, char upper);
+int		ft_putnbr_hexa(unsigned long long n, char upper);
 int		ft_putchar(char c);
 int		ft_putnbr(int n);
 char	*ft_strdup(const char *s);
@@ -27,8 +27,9 @@ size_t	ft_strlen(const char *s);
 int		ft_toupper(int c);
 int		ft_putstr(char *s);
 int		call_funcs(va_list args, char c);
-int		count(long n, int base);
-int		ft_putptr_hexa(unsigned long n);
+int		count(long long n, int base);
+int		ft_putptr_hexa(unsigned long long n);
 int		ft_unsigned_putnbr(unsigned int n);
+int		count_unsigned(unsigned long long n);
 
 #endif

@@ -6,20 +6,20 @@
 /*   By: joseoliv <joseoliv@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/30 22:14:42 by joseoliv          #+#    #+#             */
-/*   Updated: 2024/05/03 19:14:38 by joseoliv         ###   ########.fr       */
+/*   Updated: 2024/05/09 18:41:37 by joseoliv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int	ft_putnbr_hexa(unsigned long n, char upper)
+int	ft_putnbr_hexa(unsigned long long n, char upper)
 {
 	char	*hexa_nums;
 	char	result;
 	int		len;
 
 	hexa_nums = ft_strdup("0123456789abcdef");
-	len = count(n, 16);
+	len = count_unsigned(n);
 	if (n >= 16)
 		ft_putnbr_hexa(n / 16, upper);
 	if (upper == 'x')
@@ -65,7 +65,7 @@ int	ft_unsigned_putnbr(unsigned int n)
 	return (len);
 }
 
-int	ft_putptr_hexa(unsigned long n)
+int	ft_putptr_hexa(unsigned long long n)
 {
 	int	len;
 
@@ -80,22 +80,4 @@ int	ft_putptr_hexa(unsigned long n)
 		len += ft_putnbr_hexa(n, 'x');
 	}
 	return (len);
-}
-
-int	count(long n, int base)
-{
-	int	i;
-
-	i = 1;
-	if (n < 0)
-	{
-		n *= -1;
-		i++;
-	}
-	while (n > base)
-	{
-		n /= base;
-		i++;
-	}
-	return (i);
 }

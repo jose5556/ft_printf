@@ -6,7 +6,7 @@
 /*   By: joseoliv <joseoliv@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/02 22:03:39 by joseoliv          #+#    #+#             */
-/*   Updated: 2024/05/02 23:44:34 by joseoliv         ###   ########.fr       */
+/*   Updated: 2024/05/09 18:41:44 by joseoliv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,8 +26,36 @@ int	ft_putstr(char *s)
 	if (!s)
 		return (ft_putstr("(null)"));
 	while (s[i])
+		write(1, &s[i++], 1);
+	return (i);
+}
+
+int	count(long long n, int base)
+{
+	int	i;
+
+	i = 1;
+	if (n < 0)
 	{
-		write(1, &s[i], 1);
+		n *= -1;
+		i++;
+	}
+	while (n >= base)
+	{
+		n /= base;
+		i++;
+	}
+	return (i);
+}
+
+int	count_unsigned(unsigned long long n)
+{
+	int	i;
+
+	i = 1;
+	while (n >= 16)
+	{
+		n /= 16;
 		i++;
 	}
 	return (i);
