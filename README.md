@@ -26,7 +26,7 @@ Feel free to explore the ft_printf.h header file for documentation on all implem
 
 ### Requirements
 
-The function is written in C language and thus needs the **`gcc` compiler** and some standard **C libraries** to run.
+The function is written in C language and thus needs the **`cc` compiler** to run.
 
 ### Instructions
 
